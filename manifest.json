@@ -1,0 +1,56 @@
+{
+  "manifest_version": 3,
+  "name": "SEOSpace - The SEO Plugin for Squarespace",
+  "description": "SEO Tool for Squarespace websites",
+  "version": "2.3.3",
+  "permissions": [
+    "storage",
+    "cookies",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://*/*",
+    "http://*/*"
+  ],
+  "action": {
+    "default_icon": {
+      "16": "logo.png",
+      "48": "logo.png",
+      "128": "logo.png"
+    },
+    "default_popup": "index.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "run_at": "document_end",
+      "js": [
+        "assets/index.c6ed8d7a.js"
+      ],
+      "css": [
+        "assets/index.2e7ed9ea.css"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "/assets/*",
+        "injectScript.js"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "logo.png",
+    "48": "logo.png",
+    "128": "logo.png"
+  }
+}
